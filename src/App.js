@@ -24,13 +24,11 @@ class App extends Component {
     const grid = [...this.state.grid];
     if (value === "") grid[vert*9 + horiz] = value;
     else grid[vert*9 + horiz] = 1 * value;
-
-    
     var duplicates = [];
     for (let index = 0; index < 81; index++) {
-      var aux = grid[index];
-      if (aux == value) {
-        duplicates.push(aux);
+      var gridValue = grid[index];
+      if (gridValue == value) {
+        duplicates.push(gridValue);
       }
     }
     this.setState({ grid });
@@ -44,7 +42,6 @@ class App extends Component {
         <div className="body">
           <MainWindow
             grid={this.state.grid}
-            duplicates ={this.state.duplicates}
             updateGrid={this.updateGrid}
             newGrid={this.newGrid}
           />

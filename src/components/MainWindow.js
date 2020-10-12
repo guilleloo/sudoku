@@ -7,7 +7,6 @@ class MainWindow extends Component {
       <div className="window">
         <SudokuGrid
           grid={this.props.grid}
-          duplicates={this.props.duplicates}
           newGrid={this.props.newGrid}
           updateGrid={this.props.updateGrid}
         />
